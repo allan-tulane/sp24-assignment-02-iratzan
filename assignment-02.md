@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:**Isaac Ratzan
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -12,74 +12,80 @@ and push to your github repository.
 
 1. Derive asymptotic upper bounds of work for each recurrence below.
   * $W(n)=2W(n/3)+1$
-.  
+. Leaf dominated:O(n^log32) . 
 .  
 .  
 .  
 .  
   * $W(n)=5W(n/4)+n$
 .  
-.  
+.  Leaf dominated O(n^log32)
 .  
 .  
 .  
   * $W(n)=7W(n/7)+n$
-.  
+.  Balanced: O(n * log7n)
 .  
 .  
 .  
 .  
   * $W(n)=9W(n/3)+n^2$
-.  
+. Balanced: O(n^2 * log3n) 
 .  
 .  
 .  
 .  
   * $W(n)=8W(n/2)+n^3$
-.  
+.  Balanced: O(n^3 * log2n)
 .  
 .  
 .  
 .  
   * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  
+.  Root Dominated: O(n^3/2 * logn)
 .  
 .  
 .  
 .  
   * $W(n)=W(n-1)+2$
-.  
+.  Balanced: O(n)
 .  
 .  
 .  
 .  
   * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  
+.  Balanced: O(n^c+1)
 .  
 .  
 .  
 .  
   * $W(n)=W(\sqrt{n})+1$
-
+  Balanced: O(log(log(n)))
 
 2. Suppose that for a given task you are choosing between the following three algorithms:
 
   * Algorithm $\mathcal{A}$ solves problems by dividing them into
       five subproblems of half the size, recursively solving each
       subproblem, and then combining the solutions in linear time.
+
+    Runtime: O(n^log_2(5))
     
   * Algorithm $\mathcal{B}$ solves problems of size $n$ by
       recursively solving two subproblems of size $n-1$ and then
       combining the solutions in constant time.
+
+    Runtime = O(2^n)
     
   * Algorithm $\mathcal{C}$ solves problems of size $n$ by dividing
       them into nine subproblems of size $n/3$, recursively solving
       each subproblem, and then combining the solutions in $O(n^2)$
       time.
+  
+  Runtime = n^2 + log_3(n)
 
-    What are the asymptotic running times of each of these algorithms?
-    Which algorithm would you choose?
-
+    What are the asymptotic running times of each of these algorithms? (Listed below each)
+    Which algorithm would you choose? (1)
+  I would choose algorithm 1 because what matters most is which algorithm is going to grow the slowest as we approach infinity. In this case, if it is growing the slowest, it will eventually reach a point of n -> infinity where algorithm 1 will always be the most efficient.
 
 3. Now that you have some practice solving recurrences, let's work on
   implementing some algorithms. In lecture we discussed a divide and
